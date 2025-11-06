@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Menu</title>
     <link rel="stylesheet" href="admin-menu.css" />
-    <script src="admin-menu.js"></script>
   </head>
 
   <body>
     <!-- SIDEBAR -->
     <div id="sidebar">
-      <!-- logo -->
       <div id="logo">
         <img src="/assets/plla-logo.png" alt="school-logo" />
       </div>
@@ -56,9 +54,7 @@
 
     <!-- BODY PANEL -->
     <div id="body-panel">
-      <!-- upper controls -->
       <div id="uppercontrols">
-        <!-- search -->
         <div id="searchContainer">
           <input type="text" id="searchbar" placeholder="Search..." />
           <button id="search-button">
@@ -70,9 +66,7 @@
         </button>
       </div>
 
-      <!-- table -->
       <div id="table-container">
-        <!-- Fixed header -->
         <table>
           <thead>
             <tr>
@@ -85,21 +79,244 @@
             </tr>
           </thead>
         </table>
-        <!-- Scrollable body -->
         <div class="table-body-scroll">
           <table>
-            <tbody id="student-table-body">
-              <!-- JS populates here -->
-            </tbody>
+            <tbody id="student-table-body"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- buttons container -->
       <div id="enrollmentButtonsContainer">
-        <button>Old Student Enrollment</button>
-        <button>New Student Enrollment</button>
+        <button id="oldStudentBtn">Old Student Enrollment</button>
+        <button id="newStudentBtn">New Student Enrollment</button>
       </div>
     </div>
+
+    <!-- NEW STUDENT MODAL -->
+    <div id="newStudentModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2>New Student Enrollment</h2>
+            <p class="modal-subheading" id="newStudentStep">
+              Student Information
+            </p>
+          </div>
+          <button class="modal-close" id="closeNewStudent">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Step 1: Student Information -->
+          <div class="form-step active" id="newStep1">
+            <div class="form-group">
+              <label>Full Name:</label>
+              <input type="text" id="newFirstName" placeholder="First Name" />
+            </div>
+            <div class="form-group">
+              <label>Date of Birth:</label>
+              <input type="date" id="newDOB" />
+            </div>
+            <div class="form-group">
+              <label>Place of Birth:</label>
+              <input type="text" id="newPOB" placeholder="Place of Birth" />
+            </div>
+            <div class="form-group">
+              <label>Gender:</label>
+              <input type="text" id="newGender" placeholder="Gender" />
+            </div>
+            <div class="form-group">
+              <label>Current Address:</label>
+              <input
+                type="text"
+                id="newAddress"
+                placeholder="Current Address"
+              />
+            </div>
+            <div class="form-group">
+              <label>Nationality:</label>
+              <input
+                type="text"
+                id="newNationality"
+                placeholder="Nationality"
+              />
+            </div>
+            <div class="form-group">
+              <label>Religion:</label>
+              <input type="text" id="newReligion" placeholder="Religion" />
+            </div>
+            <div class="form-group">
+              <label>Grade Level:</label>
+              <input type="text" id="newGradeLevel" placeholder="Grade Level" />
+            </div>
+            <div class="form-group">
+              <label>Previous School:</label>
+              <input
+                type="text"
+                id="newPrevSchool"
+                placeholder="Previous School"
+              />
+            </div>
+            <div class="form-group">
+              <label>LRN:</label>
+              <input type="text" id="newLRN" placeholder="LRN" maxlength="12" />
+            </div>
+          </div>
+
+          <!-- Step 2: Parent Information -->
+          <div class="form-step" id="newStep2">
+            <div class="form-group">
+              <label>Full Name:</label>
+              <input
+                type="text"
+                id="parentName"
+                placeholder="Parent/Guardian Name"
+              />
+            </div>
+            <div class="form-group">
+              <label>Relationship to Student:</label>
+              <input
+                type="text"
+                id="parentRelationship"
+                placeholder="Relationship"
+              />
+            </div>
+            <div class="form-group">
+              <label>Contact Number:</label>
+              <input
+                type="tel"
+                id="parentContact"
+                placeholder="Contact Number"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email Address:</label>
+              <input
+                type="email"
+                id="parentEmail"
+                placeholder="Email Address"
+              />
+            </div>
+            <div class="form-group">
+              <label>Address:</label>
+              <input type="text" id="parentAddress" placeholder="Address" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-cancel" id="cancelNewStudent">Cancel</button>
+          <button class="btn-back" id="backNewStudent" style="display: none">
+            Back
+          </button>
+          <button class="btn-next" id="nextNewStudent">Next</button>
+          <button class="btn-submit" id="saveNewStudent" style="display: none">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OLD STUDENT MODAL -->
+    <div id="oldStudentModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2>Old Student Enrollment</h2>
+            <p class="modal-subheading" id="oldStudentStep">
+              Existing Information
+            </p>
+          </div>
+          <button class="modal-close" id="closeOldStudent">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Step 1: LRN Lookup -->
+          <div class="form-step active" id="oldStep1">
+            <div class="form-group">
+              <label>LRN:</label>
+              <div style="display: flex; gap: 8px">
+                <input
+                  type="text"
+                  id="oldLRN"
+                  placeholder="Enter LRN"
+                  maxlength="12"
+                  style="flex: 1"
+                />
+                <button class="btn-check" id="checkLRN">🔍</button>
+              </div>
+            </div>
+            <button class="btn-check-main" id="checkLRNMain">Check</button>
+            <div class="form-group" style="margin-top: 20px">
+              <label>Balance Standing:</label>
+              <input
+                type="text"
+                id="balanceStanding"
+                placeholder="Balance"
+                readonly
+              />
+            </div>
+            <div class="form-group">
+              <label>Qualification Remarks:</label>
+              <input
+                type="text"
+                id="qualificationRemarks"
+                placeholder="Remarks"
+                readonly
+              />
+            </div>
+          </div>
+
+          <!-- Step 2: Payment Plan -->
+          <div class="form-step" id="oldStep2">
+            <div style="display: flex; gap: 20px">
+              <div style="flex: 1">
+                <label
+                  style="display: block; margin-bottom: 12px; font-weight: 600"
+                  >Select Payment Plan</label
+                >
+                <div class="payment-options">
+                  <div class="payment-option" data-plan="Quarterly">
+                    Quarterly
+                  </div>
+                  <div class="payment-option" data-plan="Semi-annual">
+                    Semi-annual
+                  </div>
+                  <div class="payment-option" data-plan="Annual">Annual</div>
+                </div>
+              </div>
+              <div style="flex: 1">
+                <label
+                  style="display: block; margin-bottom: 12px; font-weight: 600"
+                  >Brief Breakdown:</label
+                >
+                <div class="breakdown-box" id="breakdownBox">
+                  <p
+                    style="
+                      color: #999;
+                      text-align: center;
+                      margin: 60px 0;
+                      font-size: 14px;
+                    "
+                  >
+                    Select a payment plan to view breakdown
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-cancel" id="cancelOldStudent">Cancel</button>
+          <button class="btn-back" id="backOldStudent" style="display: none">
+            Back
+          </button>
+          <button class="btn-next" id="nextOldStudent" style="display: none">
+            Next
+          </button>
+          <button class="btn-submit" id="saveOldStudent" style="display: none">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin-menu.js"></script>
   </body>
 </html>
