@@ -20,16 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Table population
-
 document.addEventListener('DOMContentLoaded', () => {
   const students = [
     { gradeLevel: "Grade 7", lrn: "123456789012", status: "enrolled", firstName: "Maria", lastName: "Santos" },
-    { gradeLevel: "Grade 8", lrn: "234567890123", status: "pending", firstName: "Juan", lastName: "Reyes" },
-    { gradeLevel: "Grade 9", lrn: "345678901234", status: "review", firstName: "Ana", lastName: "Cruz" }
+    { gradeLevel: "Grade 8", lrn: "234567890123", status: "pending", firstName: "Juan", lastName: "Reyes" }
+    // Add or remove items — it will pad to 10 if <10
   ];
 
-  const displayData = students.length < 6
-    ? [...students, ...Array(6 - students.length).fill({
+  // ADJUST TABLE ROWS
+  const displayData = students.length < 12
+    ? [...students, ...Array(12 - students.length).fill({
         gradeLevel: '',
         lrn: '',
         status: '',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!tbody) return;
 
   tbody.innerHTML = displayData.map(student => {
-    const isEmpty = !student.firstName && !student.lrn; // true if empty
+    const isEmpty = !student.firstName && !student.lrn;
     const rowClass = isEmpty ? 'empty-row' : '';
     return `
       <tr class="${rowClass}">

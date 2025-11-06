@@ -91,17 +91,63 @@ body {
 
 /* === MAIN CONTENT === */
 #body-panel {
+  min-height: 100vh; /* Allows growth if content expands */
+  background: linear-gradient(to bottom right, #e7fdf6, #87e5cb);
   margin-left: 200px;
-  height: 100vh;
-  background: linear-gradient(to bottom right, #ebf8f4, #ccec e3);
   padding: 20px;
-  overflow-y: auto;
+  box-sizing: border-box; /* Critical! */
 }
 
 /* === SEARCH BAR === */
+#uppercontrols {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#uppercontrols img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+#refreshbutton {
+  /* Reset defaults */
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+
+  /* Modern styling */
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+
+  /* Default style: light fill */
+  background-color: beige;
+}
+
+#refreshbutton {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: beige;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 2vw;
+}
+#refreshbutton:hover {
+  background-color: rgb(247, 247, 237);
+}
+
 #searchContainer {
   display: flex;
-  width: 300px;
+  width: 90%;
   height: 40px;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -136,12 +182,6 @@ body {
   padding: 0;
 }
 
-#search-button img {
-  width: 18px;
-  height: 18px;
-  display: block;
-}
-
 /* === TABLE === */
 #table-container {
   margin-top: 20px;
@@ -150,7 +190,10 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  max-height: 420px; /* ~6 visible rows */
+  /* ADJUST TABLE ROWS */
+  max-height: 682px; /* Shows up to 10 rows + header */
+  /* max-height = (row_height × desired_rows) + header_height */
+  /* max-height: calc(60px + (56px * N)); */
   overflow: hidden;
 }
 
@@ -160,15 +203,10 @@ body {
   table-layout: fixed;
 }
 
-
 #table-container th,
 #table-container td {
   padding: 12px 16px;
   text-align: left;
-}
-
-#table-container tbody tr {
-  height: 56px;
 }
 
 #table-container th {
@@ -176,6 +214,7 @@ body {
   font-weight: 600;
   color: #495057;
   border-bottom: 2px solid #e9ecef;
+  height: 60px;
 }
 
 #table-container td {
@@ -183,6 +222,7 @@ body {
   vertical-align: middle;
 }
 
+/* Scrollable table body */
 .table-body-scroll {
   flex: 1;
   overflow-y: auto;
@@ -192,19 +232,18 @@ body {
   border-bottom: none;
 }
 
-/* Hide borders and reduce padding for empty rows */
+/* Empty rows (clean, no visual noise) */
 #table-container .empty-row td {
   border-bottom: none;
   padding: 0;
-  background-color: transparent;
 }
 
 #table-container .empty-row {
   height: 56px;
-  background-color: #fafafa;
+  background: transparent;
 }
 
-/* Status Badges & Action Button (unchanged) */
+/* Status Badges */
 .status-badge {
   display: inline-block;
   padding: 4px 10px;
@@ -220,6 +259,7 @@ body {
 .status-badge.pending { background-color: #f39c12; }
 .status-badge.review { background-color: #e74c3c; }
 
+/* Action Button */
 .action-btn {
   background-color: #a0d2eb;
   color: #fff;
@@ -234,4 +274,34 @@ body {
 
 .action-btn:hover {
   background-color: #8ccbea;
+}
+
+/* === Enrollment Buttons Container === */
+#enrollmentButtonsContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px; /* Better than margin — cleaner spacing */
+}
+
+#enrollmentButtonsContainer button {
+  /* Reset defaults */
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+
+  /* Modern styling */
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+
+  /* Default style: light fill */
+  background-color: beige;
+  color: black;
+}
+
+#enrollmentButtonsContainer button:hover {
+  background-color: rgb(247, 247, 237);
 }
