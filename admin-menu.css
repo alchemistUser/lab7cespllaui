@@ -1,4 +1,4 @@
-/* === RESET & BASE LAYOUT === */
+/* === RESET & BASE === */
 *,
 *::before,
 *::after {
@@ -11,6 +11,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* === SIDEBAR === */
@@ -23,6 +24,7 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Logo */
@@ -48,49 +50,173 @@ body {
   text-align: left;
   cursor: pointer;
   font: inherit;
-  color: inherit;
-  /* Use flex to align icon and text */
+  color: #333;
   display: flex;
   align-items: center;
-  gap: 12px; /* space between icon and text */
+  gap: 12px;
 }
 
 .button-sidebar-menus.active {
-  background-color: lightgray;
+  background-color: #f0f0f0;
 }
 
-.button-sidebar-menus img{
-  width: 2vw;
-  height: 100%;
+.button-sidebar-menus img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 /* Logout Button */
 #log-out {
   width: auto;
   height: 40px;
-  margin: 170px 10px 20px;
+  margin: 28vh 10px 20px;
   padding: 0 16px;
   border: none;
   border-radius: 50px;
-  background-color: darkgray;
+  background-color: #6c757d;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 #log-out:hover {
-  background-color: gray;
+  background-color: #5a6268;
 }
 
 #log-out:active {
-  background-color: lightgray;
+  background-color: #888;
 }
 
-/* === MAIN CONTENT PANEL === */
+/* === MAIN CONTENT === */
 #body-panel {
   margin-left: 200px;
   height: 100vh;
-  background: linear-gradient(to bottom right, #EBF8F4, #CCECE3);
+  background: linear-gradient(to bottom right, #ebf8f4, #ccec e3);
   padding: 20px;
   overflow-y: auto;
+}
+
+/* === SEARCH BAR === */
+#searchContainer {
+  display: flex;
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+#searchbar {
+  flex: 1;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background: transparent;
+}
+
+#searchbar::placeholder {
+  color: #999;
+}
+
+#search-button {
+  width: 40px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#search-button img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* === TABLE === */
+#table-container {
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-height: 420px; /* Max visible space = ~6 rows */
+  overflow: hidden;
+}
+
+/* Shared table style */
+#table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#table-container th,
+#table-container td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+#table-container th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+}
+
+#table-container td {
+  border-bottom: 1px solid #f1f3f5;
+  vertical-align: middle;
+}
+
+/* Scrollable body */
+.table-body-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.table-body-scroll tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Badges & Action Button (unchanged) */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  min-width: 70px;
+}
+
+.status-badge.enrolled { background-color: #2ecc71; }
+.status-badge.pending { background-color: #f39c12; }
+.status-badge.review { background-color: #e74c3c; }
+
+.action-btn {
+  background-color: #a0d2eb;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #8ccbea;
 }
