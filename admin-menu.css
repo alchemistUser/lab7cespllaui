@@ -1,0 +1,87 @@
+/* === RESET & BASE LAYOUT === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* === SIDEBAR === */
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo */
+#logo {
+  width: 90%;
+  margin: 30px 10px 50px;
+}
+
+#logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sidebar Menu Buttons */
+.button-sidebar-menus {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0 16px;
+  border: none;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.button-sidebar-menus.active {
+  background-color: lightgray;
+}
+
+/* Logout Button */
+#log-out {
+  width: auto;
+  height: 40px;
+  margin: 170px 10px 20px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: darkgray;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#log-out:hover {
+  background-color: gray;
+}
+
+#log-out:active {
+  background-color: lightgray;
+}
+
+/* === MAIN CONTENT PANEL === */
+#body-panel {
+  margin-left: 200px;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #EBF8F4, #CCECE3);
+  padding: 20px;
+  overflow-y: auto;
+}
