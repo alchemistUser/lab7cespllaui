@@ -49,10 +49,19 @@ body {
   cursor: pointer;
   font: inherit;
   color: inherit;
+  /* Use flex to align icon and text */
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between icon and text */
 }
 
 .button-sidebar-menus.active {
   background-color: lightgray;
+}
+
+.button-sidebar-menus img{
+  width: 2vw;
+  height: 100%;
 }
 
 /* Logout Button */
