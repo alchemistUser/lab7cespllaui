@@ -150,21 +150,25 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  max-height: 420px; /* Max visible space = ~6 rows */
+  max-height: 420px; /* ~6 visible rows */
   overflow: hidden;
 }
 
-/* Shared table style */
 #table-container table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
+
 #table-container th,
 #table-container td {
   padding: 12px 16px;
   text-align: left;
+}
+
+#table-container tbody tr {
+  height: 56px;
 }
 
 #table-container th {
@@ -179,7 +183,6 @@ body {
   vertical-align: middle;
 }
 
-/* Scrollable body */
 .table-body-scroll {
   flex: 1;
   overflow-y: auto;
@@ -187,6 +190,18 @@ body {
 
 .table-body-scroll tr:last-child td {
   border-bottom: none;
+}
+
+/* Hide borders and reduce padding for empty rows */
+#table-container .empty-row td {
+  border-bottom: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+#table-container .empty-row {
+  height: 56px;
+  background-color: #fafafa;
 }
 
 /* Status Badges & Action Button (unchanged) */
