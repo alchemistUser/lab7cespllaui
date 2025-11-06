@@ -1,5 +1,4 @@
 // ===== DATA STORAGE (IN MEMORY) =====
-// ===== DATA STORAGE (IN MEMORY) =====
 let students = [
   { 
     id: 1,
@@ -16,7 +15,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "ABC Elementary",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Lourdes Santos",
+      relationship: "Mother",
+      contact: "09123456789",
+      email: "lourdes.santos@email.com",
+      address: "123 Rizal St, Manila"
+    }
   },
   { 
     id: 2,
@@ -33,7 +40,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "XYZ Elementary",
     balanceStanding: 5000,
-    qualificationRemarks: "Has balance"
+    qualificationRemarks: "Has balance",
+    paymentPlan: "",
+    parent: {
+      name: "Roberto Reyes",
+      relationship: "Father",
+      contact: "09234567890",
+      email: "roberto.reyes@email.com",
+      address: "456 Mabini Ave, QC"
+    }
   },
   { 
     id: 3,
@@ -50,7 +65,15 @@ let students = [
     religion: "Protestant",
     previousSchool: "Makati Central ES",
     balanceStanding: 1200,
-    qualificationRemarks: "Incomplete docs"
+    qualificationRemarks: "Incomplete docs",
+    paymentPlan: "",
+    parent: {
+      name: "Grace Lim",
+      relationship: "Mother",
+      contact: "09345678901",
+      email: "grace.lim@email.com",
+      address: "789 Ayala Blvd, Makati"
+    }
   },
   { 
     id: 4,
@@ -67,7 +90,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Pasig City ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Carmen Gonzales",
+      relationship: "Mother",
+      contact: "09456789012",
+      email: "carmen.g@email.com",
+      address: "101 Ortigas Ave, Pasig"
+    }
   },
   { 
     id: 5,
@@ -84,7 +115,15 @@ let students = [
     religion: "Iglesia Ni Cristo",
     previousSchool: "Taguig Elementary",
     balanceStanding: 3000,
-    qualificationRemarks: "Awaiting payment"
+    qualificationRemarks: "Awaiting payment",
+    paymentPlan: "",
+    parent: {
+      name: "Antonio Dela Cruz",
+      relationship: "Father",
+      contact: "09567890123",
+      email: "a.delacruz@email.com",
+      address: "202 Bonifacio St, Taguig"
+    }
   },
   { 
     id: 6,
@@ -101,7 +140,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Shaw ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Elena Fernandez",
+      relationship: "Mother",
+      contact: "09678901234",
+      email: "elena.f@email.com",
+      address: "303 Shaw Blvd, Mandaluyong"
+    }
   },
   { 
     id: 7,
@@ -118,7 +165,15 @@ let students = [
     religion: "Baptist",
     previousSchool: "Pasay City ES",
     balanceStanding: 2500,
-    qualificationRemarks: "Medical clearance pending"
+    qualificationRemarks: "Medical clearance pending",
+    paymentPlan: "",
+    parent: {
+      name: "Daniel Bautista",
+      relationship: "Father",
+      contact: "09789012345",
+      email: "d.bautista@email.com",
+      address: "404 Taft Ave, Pasay"
+    }
   },
   { 
     id: 8,
@@ -135,7 +190,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Valenzuela North ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Maria Torres",
+      relationship: "Mother",
+      contact: "09890123456",
+      email: "m.torres@email.com",
+      address: "505 Macario St, Valenzuela"
+    }
   },
   { 
     id: 9,
@@ -152,7 +215,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "San Dionisio ES",
     balanceStanding: 4200,
-    qualificationRemarks: "Partial payment"
+    qualificationRemarks: "Partial payment",
+    paymentPlan: "",
+    parent: {
+      name: "Carlos Mercado",
+      relationship: "Father",
+      contact: "09901234567",
+      email: "c.mercado@email.com",
+      address: "606 Dr A. Santos Ave, Parañaque"
+    }
   },
   { 
     id: 10,
@@ -169,7 +240,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Las Piñas Central ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Lucia Castillo",
+      relationship: "Mother",
+      contact: "09012345678",
+      email: "l.castillo@email.com",
+      address: "707 Alabang-Zapote Rd, Las Piñas"
+    }
   },
   { 
     id: 11,
@@ -186,7 +265,15 @@ let students = [
     religion: "Seventh-day Adventist",
     previousSchool: "Marikina Heights ES",
     balanceStanding: 1800,
-    qualificationRemarks: "Transcript incomplete"
+    qualificationRemarks: "Transcript incomplete",
+    paymentPlan: "",
+    parent: {
+      name: "Ramon Navarro",
+      relationship: "Father",
+      contact: "09123450987",
+      email: "r.navarro@email.com",
+      address: "808 Shoe Ave, Marikina"
+    }
   },
   { 
     id: 12,
@@ -203,7 +290,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Putatan Elementary",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Anna Sarmiento",
+      relationship: "Mother",
+      contact: "09234561098",
+      email: "a.sarmiento@email.com",
+      address: "909 National Rd, Muntinlupa"
+    }
   },
   { 
     id: 13,
@@ -220,7 +315,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Navotas Central ES",
     balanceStanding: 3700,
-    qualificationRemarks: "Balance due"
+    qualificationRemarks: "Balance due",
+    paymentPlan: "",
+    parent: {
+      name: "Felipe Ocampo",
+      relationship: "Father",
+      contact: "09345672109",
+      email: "f.ocampo@email.com",
+      address: "1010 Tanza Rd, Navotas"
+    }
   },
   { 
     id: 14,
@@ -237,7 +340,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Malabon North ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Isabel Perez",
+      relationship: "Mother",
+      contact: "09456783210",
+      email: "i.perez@email.com",
+      address: "1111 Gen T. de Leon St, Malabon"
+    }
   },
   { 
     id: 15,
@@ -254,7 +365,15 @@ let students = [
     religion: "Methodist",
     previousSchool: "Grace Park ES",
     balanceStanding: 950,
-    qualificationRemarks: "Parent meeting scheduled"
+    qualificationRemarks: "Parent meeting scheduled",
+    paymentPlan: "",
+    parent: {
+      name: "Jose Romero",
+      relationship: "Father",
+      contact: "09567894321",
+      email: "j.romero@email.com",
+      address: "1212 A. Mabini St, Caloocan"
+    }
   },
   { 
     id: 16,
@@ -271,7 +390,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "San Juan Elementary",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Cristina Villanueva",
+      relationship: "Mother",
+      contact: "09678905432",
+      email: "c.villanueva@email.com",
+      address: "1313 N. Domingo St, San Juan"
+    }
   },
   { 
     id: 17,
@@ -288,7 +415,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Pioneer ES",
     balanceStanding: 2800,
-    qualificationRemarks: "Scholarship under review"
+    qualificationRemarks: "Scholarship under review",
+    paymentPlan: "",
+    parent: {
+      name: "Rosa Gutierrez",
+      relationship: "Mother",
+      contact: "09789016543",
+      email: "r.gutierrez@email.com",
+      address: "1414 Pioneer St, Mandaluyong"
+    }
   },
   { 
     id: 18,
@@ -305,7 +440,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Rosario ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Mark Dizon",
+      relationship: "Father",
+      contact: "09890127654",
+      email: "m.dizon@email.com",
+      address: "1515 C. Raymundo Ave, Pasig"
+    }
   },
   { 
     id: 19,
@@ -322,7 +465,15 @@ let students = [
     religion: "Iglesia Ni Cristo",
     previousSchool: "Commonwealth ES",
     balanceStanding: 0,
-    qualificationRemarks: "Transfer verification pending"
+    qualificationRemarks: "Transfer verification pending",
+    paymentPlan: "",
+    parent: {
+      name: "Lina Manalo",
+      relationship: "Mother",
+      contact: "09901238765",
+      email: "l.manalo@email.com",
+      address: "1616 Commonwealth Ave, QC"
+    }
   },
   { 
     id: 20,
@@ -339,7 +490,15 @@ let students = [
     religion: "Catholic",
     previousSchool: "Sampaloc ES",
     balanceStanding: 0,
-    qualificationRemarks: "Good standing"
+    qualificationRemarks: "Good standing",
+    paymentPlan: "",
+    parent: {
+      name: "Eduardo Aquino",
+      relationship: "Father",
+      contact: "09012349876",
+      email: "e.aquino@email.com",
+      address: "1717 España Blvd, Manila"
+    }
   }
 ];
 
@@ -364,13 +523,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== TABLE POPULATION =====
-function updateTable() {
-  const displayData = students.length < 12
-    ? [...students, ...Array(12 - students.length).fill({
-        gradeLevel: '', lrn: '', status: '', firstName: '', lastName: ''
+// ===== TABLE POPULATION (supports filtering) =====
+function updateTable(filteredData = students) {
+  const displayData = filteredData.length < 12
+    ? [...filteredData, ...Array(12 - filteredData.length).fill({
+        gradeLevel: '', lrn: '', status: '', firstName: '', lastName: '', paymentPlan: ''
       })]
-    : students;
+    : filteredData;
 
   const tbody = document.getElementById('student-table-body');
   if (!tbody) return;
@@ -391,12 +550,59 @@ function updateTable() {
   }).join('');
 }
 
-document.addEventListener('DOMContentLoaded', updateTable);
+document.addEventListener('DOMContentLoaded', () => {
+  updateTable();
+});
 
-// ===== REFRESH BUTTON =====
-document.getElementById('refreshbutton')?.addEventListener('click', updateTable);
+// ===== SEARCH & REFRESH BUTTONS =====
+const searchInput = document.getElementById('searchbar');
+const searchButton = document.getElementById('search-button');
+const refreshButton = document.getElementById('refreshbutton');
 
-// ===== NEW STUDENT MODAL =====
+function performSearch() {
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (query === '') {
+    updateTable();
+    return;
+  }
+
+  const filtered = students.filter(student =>
+    student.firstName.toLowerCase().includes(query) ||
+    student.lastName.toLowerCase().includes(query) ||
+    student.lrn.includes(query) ||
+    student.gradeLevel.toLowerCase().includes(query)
+  );
+
+  updateTable(filtered);
+}
+
+searchButton?.addEventListener('click', performSearch);
+
+searchInput?.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    performSearch();
+  }
+});
+
+refreshButton?.addEventListener('click', () => {
+  if (searchInput) searchInput.value = '';
+  updateTable();
+});
+
+// ===== STUDENT EDIT / VIEW HANDLER =====
+document.getElementById('student-table-body').addEventListener('click', (e) => {
+  if (e.target.classList.contains('action-btn')) {
+    const row = e.target.closest('tr');
+    const lrn = row.children[1].textContent.trim();
+    const student = students.find(s => s.lrn === lrn);
+    if (student) {
+      openStudentForEdit(student);
+    }
+  }
+});
+
+// ===== NEW/EDIT STUDENT MODAL =====
 const newStudentModal = document.getElementById('newStudentModal');
 const newStudentBtn = document.getElementById('newStudentBtn');
 const closeNewStudent = document.getElementById('closeNewStudent');
@@ -407,11 +613,50 @@ const saveNewStudent = document.getElementById('saveNewStudent');
 const newStudentStep = document.getElementById('newStudentStep');
 
 let currentNewStep = 1;
+let editMode = false;
+let currentEditStudentId = null;
 
-newStudentBtn.addEventListener('click', () => {
+function openStudentForEdit(student) {
+  editMode = true;
+  currentEditStudentId = student.id;
+
+  // Student info (Step 1)
+  document.getElementById('newFirstName').value = student.firstName;
+  // Note: we store full name as firstName + lastName, so reconstruct
+  document.getElementById('newDOB').value = student.dateOfBirth;
+  document.getElementById('newPOB').value = student.placeOfBirth;
+  document.getElementById('newGender').value = student.gender;
+  document.getElementById('newAddress').value = student.address;
+  document.getElementById('newNationality').value = student.nationality;
+  document.getElementById('newReligion').value = student.religion;
+  document.getElementById('newGradeLevel').value = student.gradeLevel;
+  document.getElementById('newPrevSchool').value = student.previousSchool;
+  document.getElementById('newLRN').value = student.lrn;
+
+  // Parent info (Step 2)
+  const parent = student.parent || {};
+  document.getElementById('parentName').value = parent.name || '';
+  document.getElementById('parentRelationship').value = parent.relationship || '';
+  document.getElementById('parentContact').value = parent.contact || '';
+  document.getElementById('parentEmail').value = parent.email || '';
+  document.getElementById('parentAddress').value = parent.address || '';
+
   currentNewStep = 1;
   showNewStep(1);
   newStudentModal.classList.add('active');
+  document.querySelector('.modal-header h2').textContent = 'Edit Student';
+}
+
+newStudentBtn.addEventListener('click', () => {
+  editMode = false;
+  currentEditStudentId = null;
+  currentNewStep = 1;
+  showNewStep(1);
+  newStudentModal.classList.add('active');
+  document.querySelector('.modal-header h2').textContent = 'New Student Enrollment';
+  
+  // Clear fields
+  document.querySelectorAll('#newStudentModal input').forEach(input => input.value = '');
 });
 
 function showNewStep(step) {
@@ -419,12 +664,12 @@ function showNewStep(step) {
   document.getElementById(`newStep${step}`).classList.add('active');
   
   if (step === 1) {
-    newStudentStep.textContent = 'Student Information';
+    newStudentStep.textContent = editMode ? 'Student Information' : 'Student Information';
     backNewStudent.style.display = 'none';
     nextNewStudent.style.display = 'inline-block';
     saveNewStudent.style.display = 'none';
   } else if (step === 2) {
-    newStudentStep.textContent = 'Parent Information';
+    newStudentStep.textContent = editMode ? 'Parent Information' : 'Parent Information';
     backNewStudent.style.display = 'inline-block';
     nextNewStudent.style.display = 'none';
     saveNewStudent.style.display = 'inline-block';
@@ -442,16 +687,19 @@ backNewStudent.addEventListener('click', () => {
 });
 
 saveNewStudent.addEventListener('click', () => {
-  const firstName = document.getElementById('newFirstName').value;
-  const lrn = document.getElementById('newLRN').value;
+  const firstNameInput = document.getElementById('newFirstName').value.trim();
+  const lrn = document.getElementById('newLRN').value.trim();
   
-  // Extract last name from full name if needed (split by space)
-  const nameParts = firstName.split(' ');
-  const actualFirstName = nameParts[0] || firstName;
+  if (!firstNameInput || !lrn) {
+    alert('First Name and LRN are required.');
+    return;
+  }
+
+  const nameParts = firstNameInput.split(' ');
+  const actualFirstName = nameParts[0] || firstNameInput;
   const lastName = nameParts.slice(1).join(' ') || 'N/A';
   
-  const newStudent = {
-    id: nextId++,
+  const studentData = {
     firstName: actualFirstName,
     lastName: lastName,
     dateOfBirth: document.getElementById('newDOB').value,
@@ -463,9 +711,10 @@ saveNewStudent.addEventListener('click', () => {
     gradeLevel: document.getElementById('newGradeLevel').value,
     previousSchool: document.getElementById('newPrevSchool').value,
     lrn: lrn,
-    status: 'pending',
-    balanceStanding: 0,
-    qualificationRemarks: 'New student',
+    status: editMode ? students.find(s => s.id === currentEditStudentId)?.status || 'pending' : 'pending',
+    balanceStanding: editMode ? students.find(s => s.id === currentEditStudentId)?.balanceStanding || 0 : 0,
+    qualificationRemarks: editMode ? students.find(s => s.id === currentEditStudentId)?.qualificationRemarks || 'Updated' : 'New student',
+    paymentPlan: editMode ? students.find(s => s.id === currentEditStudentId)?.paymentPlan || '' : '',
     parent: {
       name: document.getElementById('parentName').value,
       relationship: document.getElementById('parentRelationship').value,
@@ -475,19 +724,32 @@ saveNewStudent.addEventListener('click', () => {
     }
   };
 
-  students.push(newStudent);
+  if (editMode) {
+    // Update existing
+    const index = students.findIndex(s => s.id === currentEditStudentId);
+    if (index !== -1) {
+      students[index] = { ...students[index], ...studentData };
+    }
+    alert('Student updated successfully!');
+  } else {
+    // Add new
+    studentData.id = nextId++;
+    students.push(studentData);
+    alert('New student enrolled successfully!');
+  }
+
   updateTable();
   closeNewStudentModal();
-  
-  alert('New student enrolled successfully!');
-  console.log('Students:', students);
 });
 
 function closeNewStudentModal() {
   newStudentModal.classList.remove('active');
   document.querySelectorAll('#newStudentModal input').forEach(input => input.value = '');
   currentNewStep = 1;
+  editMode = false;
+  currentEditStudentId = null;
   showNewStep(1);
+  document.querySelector('.modal-header h2').textContent = 'New Student Enrollment';
 }
 
 closeNewStudent.addEventListener('click', closeNewStudentModal);
@@ -499,7 +761,7 @@ newStudentModal.addEventListener('click', (e) => {
   }
 });
 
-// ===== OLD STUDENT MODAL =====
+// ===== OLD STUDENT MODAL (unchanged except small tweak) =====
 const oldStudentModal = document.getElementById('oldStudentModal');
 const oldStudentBtn = document.getElementById('oldStudentBtn');
 const closeOldStudent = document.getElementById('closeOldStudent');
@@ -512,7 +774,7 @@ const saveOldStudent = document.getElementById('saveOldStudent');
 const oldStudentStep = document.getElementById('oldStudentStep');
 
 let currentOldStep = 1;
-let selectedPaymentPlan = null;
+let selectedPaymentPlan = '';
 let currentOldStudentData = null;
 
 oldStudentBtn.addEventListener('click', () => {
@@ -522,7 +784,7 @@ oldStudentBtn.addEventListener('click', () => {
   document.getElementById('oldLRN').value = '';
   document.getElementById('balanceStanding').value = '';
   document.getElementById('qualificationRemarks').value = '';
-  selectedPaymentPlan = null;
+  selectedPaymentPlan = '';
   currentOldStudentData = null;
 });
 
@@ -586,7 +848,6 @@ backOldStudent.addEventListener('click', () => {
   showOldStep(currentOldStep);
 });
 
-// Payment plan selection
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.payment-option').forEach(option => {
     option.addEventListener('click', function() {
@@ -635,7 +896,7 @@ function updateBreakdown(plan) {
 }
 
 saveOldStudent.addEventListener('click', () => {
-  if (!selectedPaymentPlan) {
+  if (!selectedPaymentPlan.trim()) {
     alert('Please select a payment plan');
     return;
   }
@@ -655,7 +916,6 @@ saveOldStudent.addEventListener('click', () => {
   closeOldStudentModal();
   
   alert(`Student re-enrolled successfully with ${selectedPaymentPlan} payment plan!`);
-  console.log('Students:', students);
 });
 
 function closeOldStudentModal() {
@@ -666,7 +926,7 @@ function closeOldStudentModal() {
   document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
   document.getElementById('breakdownBox').innerHTML = '<p style="color: #999; text-align: center; margin: 60px 0; font-size: 14px;">Select a payment plan to view breakdown</p>';
   
-  selectedPaymentPlan = null;
+  selectedPaymentPlan = '';
   currentOldStudentData = null;
   currentOldStep = 1;
   showOldStep(1);
