@@ -1,0 +1,497 @@
+/* === RESET & BASE === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* === Basic styling === */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* === SIDEBAR === */
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+}
+
+#logo {
+  width: 90%;
+  margin: 30px 10px 50px;
+}
+
+#logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*  === SIDEBAR MENU BUTTON === */
+.button-sidebar-menus {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0 16px;
+  border: none;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button-sidebar-menus.active {
+  background-color: #f0f0f0;
+}
+
+.button-sidebar-menus img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+/* === LOG OUT BUTTON === */
+#log-out {
+  width: auto;
+  height: 40px;
+  margin: 28vh 10px 20px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: #6c757d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#log-out:hover {
+  background-color: #5a6268;
+}
+
+#log-out:active {
+  background-color: #888;
+}
+
+/* === MAIN CONTENT === */
+#body-panel {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e7fdf6, #87e5cb);
+  margin-left: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* === SEARCH BAR === */
+#uppercontrols {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#uppercontrols img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+#refreshbutton {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: beige;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 2vw;
+  border-radius: 12px;
+}
+
+#refreshbutton:hover {
+  background-color: rgb(247, 247, 237);
+}
+
+/* === SEARCH CONTAINER === */
+#searchContainer {
+  display: flex;
+  width: 90%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+/* === SEARCH INPUT FIELD === */
+#searchbar {
+  flex: 1;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background: transparent;
+}
+
+#searchbar::placeholder {
+  color: #999;
+}
+
+#search-button {
+  width: 40px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* === TABLE === */
+#table-container {
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-height: 682px;
+  overflow: hidden;
+}
+
+#table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#table-container th,
+#table-container td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+#table-container th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+  height: 60px;
+}
+
+#table-container td {
+  border-bottom: 1px solid #f1f3f5;
+  vertical-align: middle;
+}
+
+.table-body-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.table-body-scroll tr:last-child td {
+  border-bottom: none;
+}
+
+#table-container .empty-row td {
+  border-bottom: none;
+  padding: 0;
+}
+
+#table-container .empty-row {
+  height: 56px;
+  background: transparent;
+}
+
+/* === STATUS BADGE === */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  min-width: 70px;
+}
+
+.status-badge.enrolled { background-color: #2ecc71; }
+.status-badge.pending { background-color: #f39c12; }
+.status-badge.review { background-color: #e74c3c; }
+
+.action-btn {
+  background-color: #a0d2eb;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #8ccbea;
+}
+
+/* === Enrollment Buttons === */
+#enrollmentButtonsContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+#enrollmentButtonsContainer button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: beige;
+  color: black;
+}
+
+#enrollmentButtonsContainer button:hover {
+  background-color: rgb(247, 247, 237);
+}
+
+/* === MODAL === */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+/* === MODAL CONTENT === */
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.modal-subheading {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: #6c757d;
+  font-weight: normal;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #87e5cb;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.modal-footer .btn-cancel,
+.modal-footer .btn-back {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.modal-footer .btn-cancel:hover,
+.modal-footer .btn-back:hover {
+  background-color: #dee2e6;
+}
+
+.modal-footer .btn-next,
+.modal-footer .btn-submit {
+  background-color: beige;
+  color: #333;
+}
+
+.modal-footer .btn-next:hover,
+.modal-footer .btn-submit:hover {
+  background-color: rgb(247, 247, 237);
+}
+
+.btn-check {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn-check-main {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: beige;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.btn-check-main:hover {
+  background-color: rgb(247, 247, 237);
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+/* === Payment Plan Selection === */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-option {
+  padding: 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-weight: 600;
+  background-color: white;
+}
+
+.payment-option:hover {
+  border-color: #87e5cb;
+  background-color: #f8fffe;
+}
+
+.payment-option.selected {
+  border-color: #87e5cb;
+  background-color: beige;
+}
+
+.breakdown-box {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 200px;
+  background-color: #f8f9fa;
+  font-size: 14px;
+}
