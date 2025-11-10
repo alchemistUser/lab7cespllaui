@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character encoding and responsive viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
     <title>Admin Menu</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="admin-menu.css" />
   </head>
 
   <body>
-    <!-- SIDEBAR -->
+    <!-- SIDEBAR: Contains logo, navigation menu, and logout button -->
     <div id="sidebar">
+      <!-- School logo container -->
       <div id="logo">
         <img src="/assets/plla-logo.png" alt="school-logo" />
       </div>
 
+      <!-- Navigation buttons group -->
       <div id="sidebarButtonGroup">
+        <!-- Each button represents a menu item with an icon and label -->
         <button class="button-sidebar-menus">
           <img src="/assets/icon1.svg" alt="" />
           Account Registration
@@ -49,24 +55,30 @@
         </button>
       </div>
 
+      <!-- Logout button at the bottom of the sidebar -->
       <button id="log-out">Log Out</button>
     </div>
 
-    <!-- BODY PANEL -->
+    <!-- BODY PANEL: Main content area -->
     <div id="body-panel">
+      <!-- Upper control area with search and refresh -->
       <div id="uppercontrols">
+        <!-- Search container with input and button -->
         <div id="searchContainer">
           <input type="text" id="searchbar" placeholder="Search..." />
           <button id="search-button">
             <img src="/assets/search.svg" alt="search-icon" />
           </button>
         </div>
+        <!-- Refresh button -->
         <button id="refreshbutton">
           <img src="/assets/refresh.svg" alt="refresh icon" />
         </button>
       </div>
 
+      <!-- Table container for displaying student data -->
       <div id="table-container">
+        <!-- Table header -->
         <table>
           <thead>
             <tr>
@@ -79,6 +91,7 @@
             </tr>
           </thead>
         </table>
+        <!-- Scrollable table body container -->
         <div class="table-body-scroll">
           <table>
             <tbody id="student-table-body"></tbody>
@@ -86,15 +99,17 @@
         </div>
       </div>
 
+      <!-- Container for enrollment action buttons -->
       <div id="enrollmentButtonsContainer">
         <button id="oldStudentBtn">Old Student Enrollment</button>
         <button id="newStudentBtn">New Student Enrollment</button>
       </div>
     </div>
 
-    <!-- NEW STUDENT MODAL -->
+    <!-- NEW STUDENT MODAL: Multi-step form for enrolling new students -->
     <div id="newStudentModal" class="modal-overlay">
       <div class="modal-content">
+        <!-- Modal header with title, step indicator, and close button -->
         <div class="modal-header">
           <div>
             <h2>New Student Enrollment</h2>
@@ -104,8 +119,9 @@
           </div>
           <button class="modal-close" id="closeNewStudent">&times;</button>
         </div>
+        <!-- Modal body containing form steps -->
         <div class="modal-body">
-          <!-- Step 1: Student Information -->
+          <!-- Step 1: Student Information fields -->
           <div class="form-step active" id="newStep1">
             <div class="form-group">
               <label>Full Name:</label>
@@ -161,7 +177,7 @@
             </div>
           </div>
 
-          <!-- Step 2: Parent Information -->
+          <!-- Step 2: Parent/Guardian Information fields -->
           <div class="form-step" id="newStep2">
             <div class="form-group">
               <label>Full Name:</label>
@@ -201,6 +217,7 @@
             </div>
           </div>
         </div>
+        <!-- Modal footer with navigation and action buttons -->
         <div class="modal-footer">
           <button class="btn-cancel" id="cancelNewStudent">Cancel</button>
           <button class="btn-back" id="backNewStudent" style="display: none">
@@ -214,9 +231,10 @@
       </div>
     </div>
 
-    <!-- OLD STUDENT MODAL -->
+    <!-- OLD STUDENT MODAL: Multi-step form for re-enrolling existing students -->
     <div id="oldStudentModal" class="modal-overlay">
       <div class="modal-content">
+        <!-- Modal header with title, step indicator, and close button -->
         <div class="modal-header">
           <div>
             <h2>Old Student Enrollment</h2>
@@ -226,8 +244,9 @@
           </div>
           <button class="modal-close" id="closeOldStudent">&times;</button>
         </div>
+        <!-- Modal body containing form steps -->
         <div class="modal-body">
-          <!-- Step 1: LRN Lookup -->
+          <!-- Step 1: LRN lookup and account status display -->
           <div class="form-step active" id="oldStep1">
             <div class="form-group">
               <label>LRN:</label>
@@ -263,7 +282,7 @@
             </div>
           </div>
 
-          <!-- Step 2: Payment Plan -->
+          <!-- Step 2: Payment plan selection with breakdown preview -->
           <div class="form-step" id="oldStep2">
             <div style="display: flex; gap: 20px">
               <div style="flex: 1">
@@ -271,6 +290,7 @@
                   style="display: block; margin-bottom: 12px; font-weight: 600"
                   >Select Payment Plan</label
                 >
+                <!-- Payment plan options -->
                 <div class="payment-options">
                   <div class="payment-option" data-plan="Quarterly">
                     Quarterly
@@ -286,6 +306,7 @@
                   style="display: block; margin-bottom: 12px; font-weight: 600"
                   >Brief Breakdown:</label
                 >
+                <!-- Container to display selected payment plan details -->
                 <div class="breakdown-box" id="breakdownBox">
                   <p
                     style="
@@ -302,6 +323,7 @@
             </div>
           </div>
         </div>
+        <!-- Modal footer with navigation and action buttons -->
         <div class="modal-footer">
           <button class="btn-cancel" id="cancelOldStudent">Cancel</button>
           <button class="btn-back" id="backOldStudent" style="display: none">
@@ -317,6 +339,7 @@
       </div>
     </div>
 
+    <!-- Link to external JavaScript file -->
     <script src="admin-menu.js"></script>
   </body>
 </html>
